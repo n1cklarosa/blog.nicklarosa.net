@@ -18,7 +18,7 @@ const ArticleIndex = ({ data, pageContext, location }) => {
         <h2 className={style.heading}>Articles</h2>
         <SimpleGrid minChildWidth="250px" spacing="30px">
           {posts.map(({ node }, index) => (
-            <ArticleTile key={node.fields.slug} article={node} />
+            <ArticleTile key={node.fields.slug} article={node} index={index} />
           ))}
         </SimpleGrid>
         <Pagination pageContext={pageContext} />
