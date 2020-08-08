@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import style from "./article-tile.module.css"
 
 const ArticleTile = ({ article }) => (
-  <Box className={style.tile} post={article} px={1}>
+  <Box className={style.tile} maxW="450px" post={article} px={1}>
     <Link to={article.fields.slug}>
       <Img
         fluid={article.frontmatter.featimg.childImageSharp.fluid}
