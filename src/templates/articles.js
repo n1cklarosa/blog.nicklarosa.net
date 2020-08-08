@@ -1,12 +1,13 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-import _ from "lodash"
-import { Flex, Box } from "@chakra-ui/core"
+import { graphql } from "gatsby"
+// import Img from "gatsby-image"
+// import _ from "lodash"
+import { SimpleGrid } from "@chakra-ui/core"
 
 import style from "./articles.module.css"
 import Layout from "../components/layout"
 import Pagination from "../components/pagination"
+import ArticleTile from "../components/article-tile"
 
 const ArticleIndex = ({ data, pageContext, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -15,60 +16,11 @@ const ArticleIndex = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <section className={style.articlelist}>
         <h2>Articles</h2>
-        <ul>
+        <SimpleGrid minChildWidth="250px" spacing="30px">
           {posts.map(({ node }, index) => (
-            <Flex
-              direction="row-reverse"
-              justify="space-between"
-              flexWrap="wrap"
-              w="100%"
-              mb={"2rem"}
-            >
-              {node.frontmatter.featimg && (
-                <Box pl={"10px"} width={["100%", "100%", 0.5, 0.25]}>
-                  <figure className={style.featimg}>
-                    <Link to={node.fields.slug}>
-                      <Img
-                        fluid={node.frontmatter.featimg.childImageSharp.fluid}
-                        alt={node.frontmatter.title}
-                      />
-                    </Link>
-                  </figure>
-                </Box>
-              )}
-
-              <Box pl={"10px"} width={["100%", "100%", 0.5, 0.75]}>
-                {" "}
-                <Link to={node.fields.slug}>
-                  <h1 className={style.article__title}>
-                    {node.frontmatter.title}
-                  </h1>
-                </Link>
-                <div className={style.article__meta}>
-                  by {node.frontmatter.author}. Published{" "}
-                  {new Date(node.frontmatter.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}{" "}
-                </div>
-                <div
-                  className={style.article__content}
-                  dangerouslySetInnerHTML={{ __html: node.excerpt }}
-                />
-                <div className={style.article__tax}>
-                  Filed under:{" "}
-                  {node.frontmatter.subject.map((subject, index) => [
-                    index > 0 && ", ",
-                    <Link key={index} to={`/subjects/${_.kebabCase(subject)}`}>
-                      {subject}
-                    </Link>,
-                  ])}
-                </div>
-              </Box>
-            </Flex>
+            <ArticleTile key={node.fields.slug} article={node} />
           ))}
-        </ul>
+        </SimpleGrid>
         <Pagination pageContext={pageContext} />
       </section>
     </Layout>
@@ -95,7 +47,7 @@ export const query = graphql`
             author
             featimg {
               childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 300, cropFocus: ATTENTION) {
+                fluid(maxWidth: 300, maxHeight: 200, cropFocus: ATTENTION) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

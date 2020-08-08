@@ -19,30 +19,31 @@ export default ({ data }) => {
             />
           </figure>
         )}
+        <div className={style.article__content_wrapper}>
+          <h1 className={style.article__title}>{article.frontmatter.title}</h1>
 
-        <h1 className={style.article__title}>{article.frontmatter.title}</h1>
-
-        <div className={style.article__meta}>
-          by {article.frontmatter.author}. Published{" "}
-          {new Date(article.frontmatter.date).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}{" "}
+          <div className={style.article__meta}>
+            by {article.frontmatter.author}. Published{" "}
+            {new Date(article.frontmatter.date).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}{" "}
+          </div>
+          <div className={style.article__tax}>
+            Filed under:{" "}
+            {article.frontmatter.subject.map((subject, index) => [
+              index > 0 && ", ",
+              <Link key={index} to={`/subjects/${_.kebabCase(subject)}`}>
+                {subject}
+              </Link>,
+            ])}
+          </div>
+          <div
+            className={style.article__content}
+            dangerouslySetInnerHTML={{ __html: article.html }}
+          />
         </div>
-        <div className={style.article__tax}>
-          Filed under:{" "}
-          {article.frontmatter.subject.map((subject, index) => [
-            index > 0 && ", ",
-            <Link key={index} to={`/subjects/${_.kebabCase(subject)}`}>
-              {subject}
-            </Link>,
-          ])}
-        </div>
-        <div
-          className={style.article__content}
-          dangerouslySetInnerHTML={{ __html: article.html }}
-        />
       </article>
     </Layout>
   )

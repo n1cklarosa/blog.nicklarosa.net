@@ -1,32 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Flex, Box } from "@chakra-ui/core"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
+import { SimpleGrid } from "@chakra-ui/core"
+// import Img from "gatsby-image"
 
+import ArticleTile from "../components/article-tile"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import style from "./index.module.css"
 
 const IndexPage = ({ data }) => {
   console.log(data.allMarkdownRemark.edges)
   const Posts = data.allMarkdownRemark.edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => (
-      <Box
-        width={["100%", "100%", 0.5, 0.33]}
-        key={edge.node.fields.slug}
-        post={edge.node}
-        px={1}
-      >
-        <Link to={edge.node.fields.slug}>
-          <Img
-            fluid={edge.node.frontmatter.featimg.childImageSharp.fluid}
-            alt={edge.node.frontmatter.title}
-          />
-        </Link>
-        <Link to={edge.node.fields.slug}>
-          <h2>{edge.node.frontmatter.title}</h2>
-        </Link>
-      </Box>
+      <ArticleTile key={edge.node.fields.slug} article={edge.node} />
     ))
   return (
     <Layout>
@@ -40,9 +28,16 @@ const IndexPage = ({ data }) => {
           boxSizing: "border-box",
         }}
       >
-        <Flex w="100%" justify="space-between" flexWrap="wrap">
+        <div className={style.hero}>
+          <p>Hey, I'm Nick</p>
+          <p>
+            A front end developer from Sydney specialising in Wordpress, React
+            JS, Gatsy and SEO.
+          </p>
+        </div>
+        <SimpleGrid columns={[1, null, 3]} spacing="30px">
           {Posts}
-        </Flex>
+        </SimpleGrid>
       </div>
     </Layout>
   )
@@ -53,7 +48,7 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      limit: 3
+      limit: 12
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -67,8 +62,8 @@ export const pageQuery = graphql`
             author
             featimg {
               childImageSharp {
-                fluid(maxWidth: 300, cropFocus: ATTENTION) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 300, maxHeight: 200, cropFocus: ATTENTION) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

@@ -1,5 +1,11 @@
 :root {
-  --content-w-regular: 1140px;
+  --content-w-regular: 960px;
+  --content-w-blog: 800px;
+  --content-w-narrow: 560px;
 
   box-sizing: border-box;
+}
+
+a {
+  background-image: none !important;
 }

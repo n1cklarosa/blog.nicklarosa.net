@@ -12,10 +12,10 @@
 }
 
 .navigation a {
-  display: block;
+  /* display: block;
   line-height: 2;
   text-decoration: none;
-  color: inherit;
+  color: inherit; */
 }
 
 .navigation a:hover {
