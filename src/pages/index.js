@@ -31,8 +31,8 @@ const IndexPage = ({ data }) => {
         <div className={style.hero}>
           <p>Hey, I'm Nick</p>
           <p>
-            A front end developer from Sydney specialising in Wordpress, React
-            JS, Gatsy and SEO.
+            A developer from Sydney with strong skill in Wordpress, React JS,
+            Gatsy, PHP and Custom CMS.
           </p>
         </div>
         <SimpleGrid minChildWidth="250px" spacing="30px">

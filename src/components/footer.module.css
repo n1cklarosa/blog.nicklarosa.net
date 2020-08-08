@@ -7,6 +7,12 @@
   max-width: 300px;
 }
 
+@media screen and (max-width: 480px) {
+  .footersocials {
+    max-width: 200px;
+  }
+}
+
 .footersocials li img {
   width: 40px;
   height: auto;

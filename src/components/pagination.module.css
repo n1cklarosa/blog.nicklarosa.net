@@ -12,7 +12,7 @@
 
 .pagenav__item a {
   display: block;
-  padding: 2rem;
+  padding: 0 0rem;
   text-align: center;
   border: 2px solid var(--rich-black);
   text-decoration: none;

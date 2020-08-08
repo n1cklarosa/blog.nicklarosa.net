@@ -79,7 +79,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   paginate({
     createPage, // The Gatsby `createPage` function
     items: posts, // An array of objects
-    itemsPerPage: 2, // How many items you want per page
+    itemsPerPage: 12, // How many items you want per page
     pathPrefix: "/articles", // Creates pages like `/blog`, `/blog/2`, etc
     component: path.resolve(`./src/templates/articles.js`), // Just like `createPage()`
   })
@@ -89,7 +89,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     paginate({
       createPage, // The Gatsby `createPage` function
       items: nodes, // An array of objects
-      itemsPerPage: 2, // How many items you want per page
+      itemsPerPage: 12, // How many items you want per page
       pathPrefix: `/subjects/${_.kebabCase(fieldValue)}`, // Creates pages like `/blog`, `/blog/2`, etc
       component: path.resolve(`./src/templates/subjects.js`), // Just like `createPage()`
       context: { subject: fieldValue },
