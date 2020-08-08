@@ -15,7 +15,7 @@ import logo from "./logo-black.svg"
 const Logo = () => {
   return (
     <img
-      style={{ maxWidth: "200px", height: "auto" }}
+      style={{ marginBottom: 0, maxWidth: "200px", height: "auto" }}
       src={logo}
       alt="Site Logo"
     />

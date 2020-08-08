@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { SimpleGrid } from "@chakra-ui/core"
 // import Img from "gatsby-image"
 
@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
           margin: `0 auto`,
           maxWidth: "var(--content-w-regular)",
           width: "100%",
-          padding: `1.45rem`,
+          padding: `0 1.45rem`,
           boxSizing: "border-box",
         }}
       >
@@ -35,9 +35,15 @@ const IndexPage = ({ data }) => {
             JS, Gatsy and SEO.
           </p>
         </div>
-        <SimpleGrid columns={[1, null, 3]} spacing="30px">
+        <SimpleGrid minChildWidth="250px" spacing="30px">
           {Posts}
         </SimpleGrid>
+
+        <div className={style.footer}>
+          <p style={{ textAlign: "center" }}>
+            <Link to={"/articles"}>View Blog</Link>
+          </p>
+        </div>
       </div>
     </Layout>
   )
