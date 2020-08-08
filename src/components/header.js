@@ -19,6 +19,7 @@ const Header = ({ siteTitle, menuItems }) => (
         padding: `1.45rem 1.0875rem`,
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
       <Link
