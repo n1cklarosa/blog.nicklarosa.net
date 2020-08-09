@@ -3,6 +3,7 @@ module.exports = {
     title: `Nick La Rosa's Web Dev Blog Blog`,
     description: `A developers blog`,
     author: `@nick_la_rosa`,
+    siteUrl: `https://blog.nicklarosa.net`,
     menuItems: [
       {
         title: `Articles`,
@@ -113,5 +114,6 @@ module.exports = {
         // cookieDomain: "example.com",
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 }
