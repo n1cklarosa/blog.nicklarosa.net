@@ -21,7 +21,7 @@ It pleases me greatly to say the pick up was quite fast. The tougest part has be
 
 In the 18 or so hours I have found to work on this, I got a few tutorials videos in, read some docs and got the outline of two sites done. You are reading one of them right now.
 
-This blog is generator from data housed in Markdown files. How neat!
+This blog is generated from data housed in Markdown files. How neat!
 
 The second job was building a landing page styled theme for my personal web portfolio at nicklarosa.net. I would say I am about 90% through it with some final touches to styling and copy before it is complete. With the same amount of images, and a way more modern feel, I am getting results on Google’s page speed insights between 98 and 100 using Netlify’s free hosting! I had never really breached 80 using Wordpress without some third party image crunching, costly servers and some complex layering of caches. I am over the moon!
 
