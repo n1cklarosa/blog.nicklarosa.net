@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import _ from "lodash"
+import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import style from "./article.module.css"
@@ -11,17 +12,16 @@ export default ({ data }) => {
   return (
     <Layout>
       <article className={style.article}>
-        {article.frontmatter.featimg && (
-          <figure className={style.featimg}>
-            <Img
-              fluid={article.frontmatter.featimg.childImageSharp.fluid}
-              alt={article.frontmatter.title}
-            />
-          </figure>
-        )}
+        <SEO
+          title={article.frontmatter.title}
+          description={article.excerpt}
+          image="/logo.png"
+          pathname={article.slug}
+          // Boolean indicating whether this is an article:
+          article
+        />
         <div className={style.article__content_wrapper}>
           <h1 className={style.article__title}>{article.frontmatter.title}</h1>
-
           <div className={style.article__meta}>
             by {article.frontmatter.author}. Published{" "}
             {new Date(article.frontmatter.date).toLocaleDateString("en-US", {
@@ -39,6 +39,16 @@ export default ({ data }) => {
               </Link>,
             ])}
           </div>
+        </div>
+        {article.frontmatter.featimg && (
+          <figure className={style.featimg}>
+            <Img
+              fluid={article.frontmatter.featimg.childImageSharp.fluid}
+              alt={article.frontmatter.title}
+            />
+          </figure>
+        )}
+        <div className={style.article__content_wrapper}>
           <div
             className={style.article__content}
             dangerouslySetInnerHTML={{ __html: article.html }}
@@ -60,7 +70,7 @@ export const query = graphql`
         author
         featimg {
           childImageSharp {
-            fluid(maxWidth: 1500, maxHeight: 700, cropFocus: ATTENTION) {
+            fluid(maxWidth: 1500, maxHeight: 550, cropFocus: ATTENTION) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

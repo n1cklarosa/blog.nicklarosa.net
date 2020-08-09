@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Nick La Rosa Blog Theme`,
+    title: `Nick La Rosa's Web Dev Blog Blog`,
     description: `A developers blog`,
     author: `@nick_la_rosa`,
     menuItems: [

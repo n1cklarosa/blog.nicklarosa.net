@@ -27,9 +27,15 @@
 
 .article__title {
   margin-bottom: 1rem;
-  padding-top: 4rem;
-  font-size: 4rem;
+  padding-top: 0rem;
+  font-size: 2rem;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .article__title {
+    font-size: 4rem;
+  }
 }
 
 .article__meta::before {

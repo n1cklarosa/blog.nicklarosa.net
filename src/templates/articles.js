@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
 import { SimpleGrid } from "@chakra-ui/core"
+import SEO from "../components/seo"
 
 import style from "./articles.module.css"
 import Layout from "../components/layout"
@@ -14,6 +15,14 @@ const ArticleIndex = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title="Articles"
+        description="All articles published by the Project"
+        image="/logo.png"
+        pathname="/articles"
+        // Boolean indicating whether this is an article:
+        // article
+      />
       <section className={style.articlelist}>
         <h2 className={style.heading}>Articles</h2>
         <SimpleGrid minChildWidth="250px" spacing="30px">

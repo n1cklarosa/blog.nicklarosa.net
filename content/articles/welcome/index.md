@@ -1,7 +1,7 @@
 ---
 title: Welcome
 date: 2020-04-15
-subject: []
+subject: ["blog"]
 author: Nick La Rosa
 featimg: bg.jpg
 ---

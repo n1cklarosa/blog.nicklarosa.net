@@ -24,7 +24,7 @@ const Footer = ({ siteTitle, footerItems }) => (
       <ul className={style.footersocials}>
         <li>
           <a
-            href="http://github.com/nick_la_rosa"
+            href="https://twitter.com/nick_la_rosa"
             target="_blank"
             rel="noreferrer"
           >
@@ -33,7 +33,7 @@ const Footer = ({ siteTitle, footerItems }) => (
         </li>
         <li>
           <a
-            href="http://github.com/nick_la_rosa"
+            href="https://www.linkedin.com/in/nick-la-rosa-67404733/?originalSubdomain=au"
             target="_blank"
             rel="noreferrer"
           >
@@ -42,7 +42,7 @@ const Footer = ({ siteTitle, footerItems }) => (
         </li>
         <li>
           <a
-            href="http://github.com/nick_la_rosa"
+            href="https://github.com/n1cklarosa"
             target="_blank"
             rel="noreferrer"
           >
