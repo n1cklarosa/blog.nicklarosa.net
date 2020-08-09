@@ -1,7 +1,7 @@
 ---
 title: Gatsby JS - Two Days In
 date: 2020-08-10
-subject: ["developer diary", "wordpress", "plugins"]
+subject: ["developer diary", "wordpress", "gatsbyjs"]
 author: Nick La Rosa
 featimg: screenshot.jpg
 ---
