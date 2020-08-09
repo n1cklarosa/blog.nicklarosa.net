@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 import style from "./index.module.css"
 
 const IndexPage = ({ data }) => {
-  console.log(data.allMarkdownRemark.edges)
   const Posts = data.allMarkdownRemark.edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => (
@@ -31,7 +30,8 @@ const IndexPage = ({ data }) => {
         <div className={style.hero}>
           <p>Hey, I'm Nick</p>
           <p>
-            A full stack developer from Sydney with emphasis in Wordpress, React JS, NodeJS, Gatsy, PHP and Custom CMS.
+            A full stack developer from Sydney with emphasis in Wordpress, React
+            JS, NodeJS, Gatsy, PHP and Custom CMS.
           </p>
         </div>
         <SimpleGrid minChildWidth="250px" spacing="30px">

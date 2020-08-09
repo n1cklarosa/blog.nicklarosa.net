@@ -4,6 +4,8 @@ import twitterLogo from "./twitter.svg"
 import linkedInLogo from "./linkedin.svg"
 import githubLogo from "./github.svg"
 
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+
 import style from "./footer.module.css"
 
 const Footer = ({ siteTitle, footerItems }) => (
@@ -23,31 +25,31 @@ const Footer = ({ siteTitle, footerItems }) => (
     >
       <ul className={style.footersocials}>
         <li>
-          <a
+          <OutboundLink
             href="https://twitter.com/nick_la_rosa"
             target="_blank"
             rel="noreferrer"
           >
             <img src={twitterLogo} alt="socials" />
-          </a>
+          </OutboundLink>
         </li>
         <li>
-          <a
+          <OutboundLink
             href="https://www.linkedin.com/in/nick-la-rosa-67404733/?originalSubdomain=au"
             target="_blank"
             rel="noreferrer"
           >
             <img src={linkedInLogo} alt="socials" />
-          </a>
+          </OutboundLink>
         </li>
         <li>
-          <a
+          <OutboundLink
             href="https://github.com/n1cklarosa"
             target="_blank"
             rel="noreferrer"
           >
             <img src={githubLogo} alt="socials" />
-          </a>
+          </OutboundLink>
         </li>
       </ul>
       © {new Date().getFullYear()} {siteTitle}, Built with
