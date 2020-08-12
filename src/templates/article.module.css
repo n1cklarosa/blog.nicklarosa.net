@@ -55,6 +55,10 @@
   margin: 3rem auto;
 }
 
+.article__content a {
+  font-weight: 700;
+}
+
 .article__content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
