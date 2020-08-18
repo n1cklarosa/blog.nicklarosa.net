@@ -26,6 +26,6 @@ Then just click on the Install now button, which should bring you to the followi
 
 ![](UploadPlugin3.jpg)
 
-You can now hardness the new power of your latest plugin ! Pretty easy right?
+You can now harness the new power of your latest plugin ! Pretty easy right?
 
 Each plugin has its own way of doing its things. You might find a new section in your admin menu, or it might have its own screen hidden under the Settings section. It all comes down to the plugin you are using and its needs. Make sure you have read any info that came with the wordpress plugin to configure any necessary settings to your needs.

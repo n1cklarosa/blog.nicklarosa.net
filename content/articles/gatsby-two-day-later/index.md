@@ -27,7 +27,7 @@ The second job was building a landing page styled theme for my personal web port
 
 My only concern is the longevity of the build process. I dont have any javascript based projects that can sit there for a year, and still compile with out some refactoring and reworking to bring scripts up to date. I wouldn't be tellimg the whole truth if I dont admint I have been stuck there before, quite a few times.
 
-to sum it up, I have had a blast learning this widely celebrated technology and am kicking myself for not making time for it earlier.
+To sum it up, I have had a blast learning this widely celebrated technology and am kicking myself for not making time for it earlier.
 
 Gatsby, I think I love you.
 
