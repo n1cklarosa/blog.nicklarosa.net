@@ -46,7 +46,7 @@ I hope someone else out there might find some use with it. If you have any issue
 
 ### Initial Setup
 
-Clone this repo or download the zip directly.
+Clone this repo or download the zip directly then un-compress it.
 
 ###### For Mac and Linux
 
