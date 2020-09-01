@@ -63,14 +63,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Generate single post pages
   const posts = queryResult.data.postQuery.edges
-  posts.forEach(post => {
+  posts.forEach(post => { 
+     
     createPage({
       path: post.node.fields.slug,
       component: path.resolve(`./src/templates/article.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: post.node.fields.slug,
+        slug: post.node.fields.slug 
       },
     })
   })

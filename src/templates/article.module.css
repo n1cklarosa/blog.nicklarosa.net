@@ -1,6 +1,6 @@
 .article__meta,
 .article__tax {
-  font-family: var(--highlight-font);
+  /* font-family: var(--highlight-font); */
   font-size: 80%;
 }
 
@@ -16,7 +16,7 @@
   padding: 0 2rem;
 }
 .article p {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .featimg {
@@ -58,7 +58,7 @@
 .article__content a {
   font-weight: 700;
 }
-
+/* 
 .article__content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -78,4 +78,4 @@
 .article__content h6 {
   font-size: 1rem;
   margin-bottom: 1rem;
-}
+} */

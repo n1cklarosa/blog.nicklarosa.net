@@ -8,7 +8,9 @@ import Layout from "../components/layout"
 import style from "./article.module.css"
 
 export default ({ data }) => {
+  console.log("data", data)
   const article = data.markdownRemark
+  
   return (
     <Layout>
       <article className={style.article}>
@@ -54,6 +56,11 @@ export default ({ data }) => {
             dangerouslySetInnerHTML={{ __html: article.html }}
           />
         </div>
+
+        <div className={style.article__nav_wrapper}>
+       
+        </div>
+
       </article>
     </Layout>
   )
@@ -70,7 +77,7 @@ export const query = graphql`
         author
         featimg {
           childImageSharp {
-            fluid(maxWidth: 1500, maxHeight: 550, cropFocus: ATTENTION) {
+            fluid(maxWidth: 1500, maxHeight: 550, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

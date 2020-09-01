@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
-import { SimpleGrid } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/core"
 import SEO from "../components/seo"
 
 import style from "./articles.module.css"
@@ -25,11 +25,11 @@ const ArticleIndex = ({ data, pageContext, location }) => {
       />
       <section className={style.articlelist}>
         <h2 className={style.heading}>Articles</h2>
-        <SimpleGrid minChildWidth="250px" spacing="30px">
+        <Box>
           {posts.map(({ node }, index) => (
             <ArticleTile key={node.fields.slug} article={node} index={index} />
           ))}
-        </SimpleGrid>
+        </Box>
         <Pagination pageContext={pageContext} />
       </section>
     </Layout>
@@ -56,7 +56,7 @@ export const query = graphql`
             author
             featimg {
               childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 200, cropFocus: ATTENTION) {
+                fluid(maxWidth: 300, maxHeight: 200, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

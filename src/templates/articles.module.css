@@ -27,7 +27,7 @@ a {
 
 .article__meta,
 .article__tax {
-  font-family: var(--highlight-font);
+  /* font-family: var(--highlight-font); */
   font-size: 80%;
 }
 

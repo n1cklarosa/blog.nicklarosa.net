@@ -13,12 +13,12 @@
 }
 
 .meta__info {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .meta__info a {
   font-size: 0.8em;
-  /* text-decoration: none !important; */
+  text-decoration: underline !important; 
   text-shadow: none !important;
   background-image: none !important;
 }

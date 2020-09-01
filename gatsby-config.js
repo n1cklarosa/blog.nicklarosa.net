@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Nick La Rosa's Web Dev Blog Blog`,
+    title: `Nick La Rosa's Web Dev Blog`,
     description: `A developers blog`,
     author: `@nick_la_rosa`,
     siteUrl: `https://blog.nicklarosa.net`,
@@ -25,6 +25,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-remark-prismjs`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -56,10 +57,11 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 1080,
+              maxWidth: 680,
               quality: 100,
             },
           },
+          `gatsby-remark-prismjs`,
         ],
       },
     },
@@ -76,7 +78,7 @@ module.exports = {
          * @property {boolean} [isResettingCSS=true]
          * if false, this plugin will not use `<CSSReset />
          */
-        isResettingCSS: true,
+        isResettingCSS: false,
         /**
          * @property {boolean} [isUsingColorMode=true]
          * if false, this plugin will not use <ColorModeProvider />
