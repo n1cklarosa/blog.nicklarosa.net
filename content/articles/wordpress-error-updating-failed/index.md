@@ -26,4 +26,4 @@ Head to the **Settings** menu and select **Permalinks**.
 
 rom there it is usually just a matter of pressing **Save Changes** and you are back in business. If this does not fix the issue you may have something a little more serious happening with your server configuration.
 
-You will occasionally find a notice on the permalink page advising that changes cannot be made as the server does not have write access to a particular file (the .htaccess file). In this instance, it might be best to contact your host or web developer. If you are still having issues please feel free to contact me [here](https://nicklarosa.net/contact/) or leave a comment below. 
+You will occasionally find a notice on the permalink page advising that changes cannot be made as the server does not have write access to a particular file (the .htaccess file). In this instance, it might be best to contact your host or web developer. If you are still having issues please feel free to contact me [here](https://nicklarosa.net/contact/). 

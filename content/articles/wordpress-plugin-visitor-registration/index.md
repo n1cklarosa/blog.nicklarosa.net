@@ -34,6 +34,14 @@ Once the above shortcode has been added to any wordpress page or post, you shoul
 
 ![Image of working form](img_0854-1024x567.jpg)
 
+### Adding a custom link to confirmation
+
+By default, the form will return the option to add a guest once after the user has submitted the form. You may want to add a link to something else (a menu or location pilicies) upon the form being submitted. I have set up a few shortcode attributes you can use to make this happen.
+
+Example with a custom link showing "View Menu" along side the "Add a guest" link. 
+
+`[visitor_registration_form customlink="/view-menu" customlinktext="View Menu"]`
+
 ### Customise
 
 The following shortcode attributes can be used to customise the form without having to alter your theme. A custom field can also be added using the ‘customfield1’ option
