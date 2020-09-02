@@ -1,5 +1,5 @@
 ---
-title: Simple Visitor Registration Form for WordPress
+title: Corona Virus (COVID-19) Visitor Registration Form for WordPress
 date: 2020-07-12
 subject: ["wordpress", "plugins"]
 author: Nick La Rosa
