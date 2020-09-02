@@ -20,7 +20,7 @@ A CSV file can be exported from the wordpress admin section which you can open i
 
 <a href="https://simplevisitorregistration.nicklarosa.net/" target="_blank">Demo</a>
 
-<a href="https://d32maysp7h0pq5.cloudfront.net/wp-content/uploads/2020/07/simple-visitor-registration.zip" target="_blank">Download Plugin – simple-visitor-registration.zip</a>
+<a href="https://d32maysp7h0pq5.cloudfront.net/wp-content/uploads/2020/09/simple-visitor-registration.zip" target="_blank">Download Plugin – simple-visitor-registration.zip</a>
 
 <a href="https://github.com/n1cklarosa/WP-Simple-Visitor-Registration-Form" target="_blank">Source code on github</a>
 
