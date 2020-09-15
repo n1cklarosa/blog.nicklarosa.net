@@ -11,9 +11,9 @@ const ArticleTile = ({ article, index }) => (
   
     <Box
       className={style.tile}
-      maxW="450px"
+      w={{sm:"100%",lg:"50%", xl: 1/3}}
       post={article}
-      px={1}
+      px={3}
       data-sal="slide-up"
       data-sal-easing="ease"
     >

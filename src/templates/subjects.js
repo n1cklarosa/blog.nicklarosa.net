@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
-import { SimpleGrid } from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/core"
 
 import style from "./articles.module.css"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import Pagination from "../components/pagination"
-import ArticleTile from "../components/article-tile"
+import Pagination from "../components/global/pagination/pagination"
+import ArticleTile from "../components/articles/article-tile"
 
 const ArticleIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
@@ -32,11 +32,11 @@ const ArticleIndex = ({ data, pageContext }) => {
       />
       <section className={style.articlelist}>
         <h2>{pageHeader}</h2>
-        <SimpleGrid minChildWidth="250px" maxChildWidth="500px" spacing="30px">
+        <Flex flexWrap={'wrap'}>
           {posts.map(({ node }, index) => (
             <ArticleTile article={node} key={index} />
           ))}
-        </SimpleGrid>
+        </Flex>
       </section>
       <Pagination pageContext={pageContext} />
     </Layout>

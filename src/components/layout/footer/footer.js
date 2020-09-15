@@ -1,8 +1,8 @@
 import React from "react"
 
-import twitterLogo from "./twitter.svg"
-import linkedInLogo from "./linkedin.svg"
-import githubLogo from "./github.svg"
+import twitterLogo from "../../twitter.svg"
+import linkedInLogo from "../../linkedin.svg"
+import githubLogo from "../../github.svg"
 
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 

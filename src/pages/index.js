@@ -1,17 +1,16 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { SimpleGrid } from "@chakra-ui/core"
-// import Img from "gatsby-image"
+import { Flex } from "@chakra-ui/core" 
 
-import ArticleTile from "../components/article-tile"
-import Layout from "../components/layout"
+import ArticleTile from "../components/articles/article-tile"
+import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 
 import style from "./index.module.css"
 
 const IndexPage = ({ data }) => {
   const Posts = data.allMarkdownRemark.edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => !!edge.node.frontmatter.date) 
     .map(edge => (
       <ArticleTile key={edge.node.fields.slug} article={edge.node} />
     ))
@@ -33,13 +32,13 @@ const IndexPage = ({ data }) => {
             A full stack javascript and php developer from Sydney Australia.
           </p>
         </div>
-        <SimpleGrid minChildWidth="250px" spacing="30px">
+        <Flex flexWrap={'wrap'}>
           {Posts}
-        </SimpleGrid>
+        </Flex>
 
         <div className={style.footer}>
           <p style={{ textAlign: "center" }}>
-            <Link to={"/articles"}>View Blog</Link>
+            <Link to={"/blog"}>View Blog</Link>
           </p>
         </div>
       </div>

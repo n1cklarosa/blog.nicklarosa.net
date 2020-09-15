@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import _ from "lodash"
 import SEO from "../components/seo"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import style from "./article.module.css"
 
 export default ({ data }) => {

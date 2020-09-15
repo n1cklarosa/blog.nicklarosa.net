@@ -22,7 +22,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     actions.createNodeField({
       node,
       name: `slug`,
-      value: `/articles${slug}`,
+      value: `${slug}`,
     })
   }
 }
@@ -81,7 +81,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage, // The Gatsby `createPage` function
     items: posts, // An array of objects
     itemsPerPage: 12, // How many items you want per page
-    pathPrefix: "/articles", // Creates pages like `/blog`, `/blog/2`, etc
+    pathPrefix: "/blog", // Creates pages like `/blog`, `/blog/2`, etc
     component: path.resolve(`./src/templates/articles.js`), // Just like `createPage()`
   })
 

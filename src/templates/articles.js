@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
-import { Box } from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/core"
 import SEO from "../components/seo"
 
 import style from "./articles.module.css"
-import Layout from "../components/layout"
-import Pagination from "../components/pagination"
-import ArticleTile from "../components/article-tile"
+import Layout from "../components/layout/layout"
+import Pagination from "../components/global/pagination/pagination"
+import ArticleTile from "../components/articles/article-tile"
 
 const ArticleIndex = ({ data, pageContext, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -25,11 +25,11 @@ const ArticleIndex = ({ data, pageContext, location }) => {
       />
       <section className={style.articlelist}>
         <h2 className={style.heading}>Articles</h2>
-        <Box>
+        <Flex flexWrap={'wrap'}>
           {posts.map(({ node }, index) => (
             <ArticleTile key={node.fields.slug} article={node} index={index} />
           ))}
-        </Box>
+        </Flex>
         <Pagination pageContext={pageContext} />
       </section>
     </Layout>

@@ -1,13 +1,18 @@
+const data = require('./content/data');
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Nick La Rosa's Web Dev Blog`,
-    description: `A developers blog`,
-    author: `@nick_la_rosa`,
+    title: data.SiteTitle,
+    description: data.SiteDescription,
+    author: data.SiteAuthor,
     siteUrl: `https://blog.nicklarosa.net`,
     menuItems: [
       {
-        title: `Articles`,
-        link: `/articles`,
+        title: `Blog`,
+        link: `/blog`,
       },
       // {
       //   title: `About`,
@@ -86,12 +91,20 @@ module.exports = {
         isUsingColorMode: false,
       },
     },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        token: process.env.GATSBY_GITHUB_API_TOKEN,
+        graphQLQuery: data.githubApiQuery,
+        variables: data.githubApiVariables,
+      },
+    },
     `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-174930582-1",
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
