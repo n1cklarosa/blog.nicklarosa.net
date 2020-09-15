@@ -1,9 +1,9 @@
 ---
 title: Easy Wordpress Development Environment with Docker Compose
 date: 2020-09-01
-subject: ["docker", "tutorial"]
+subject: ["docker", "tutorial", "wordpress"]
 author: Nick La Rosa
-featimg: header.jpg
+featimg: header2.jpg
 ---
 
 When working on a solution for [Wordpress](https://wordpress.org/), a local development environment is a great way to manage code repositories and keep things quick - with room to experiment. I have friends who still use plain old css, and work off a server using SFTP like some sort of pirate. I don't know how they have managed it for so long. I couldn't live with out services such as SASS, Webpack, Parcel, Babel and ES6, and most of the solutions that lead us to today (has anyone heard from gulp in a while? ).
@@ -32,11 +32,13 @@ Well then! Before long I had built myself a docker compose file to quickly fire 
 
 I hope someone else out there might find some use with it. If you have any issues, feel free to reach out on [Twitter](https://twitter.com/nick_la_rosa) or [Github](https://github.com/n1cklarosa)
 
-**This project leverages the work from done in the following two projects found on DockerHub**
+**This project leverages the work from done in the following three projects found on DockerHub**
 
-[Mysql5.7](https://hub.docker.com/r/ymnoor21/mysql5.7/)
+[Mysql 5.7](https://hub.docker.com/r/ymnoor21/mysql5.7/)
 
 [local-wordpress](https://hub.docker.com/r/alfiemx/local-wordpress)
+
+[Wordpress CLI](https://hub.docker.com/_/wordpress)
 
 ### Requirements
 
@@ -47,6 +49,12 @@ I hope someone else out there might find some use with it. If you have any issue
 ### Initial Setup
 
 Clone this repo or download the zip directly then un-compress it.
+
+Example command for clone.
+
+```
+git clone https://github.com/n1cklarosa/EasyWordpressDockerComposeEnvironment.git
+```
 
 ###### For Mac and Linux
 
@@ -124,28 +132,59 @@ The docker-compose file will setup a MYSQL server on port 18766 (this can be alt
 
 #### Importing a .sql file using the Command Line
 
-Example command 
+Example command using local mysql install (ie - not using a docker installation of mysql)
 
 ```/path/to/mysql -h 127.0.0.1 -u wordpress_user -p wordpress_dv < data.sql```
 
-#### PHP Error monitoring
+#### Finding Docker Container ID
 
-On mac and linux, you can use the following command to show a continuous reading of errors on your Wordpress install.
-
-```
-docker logs -f CONTAINER_ID 2>&1 >/dev/null | grep -i error
-```
-
-Swap CONTAINER_ID with the ID docker has assigned to your running container. To find this, run the following command
+To find the ID of your container, run the following command
 
 ```
 docker ps
 ```
 
-You will see an output like the following, we are looking for the wordpress:latest container. In this instance id will be *ed72061e0466*
+You will see an output like the following, we are looking for the wordpress:latest container. 
 
 ```
 ed72061e0466        wordpress:latest    "docker-entrypoint.s…"   7 hours ago         Up 7 hours          0.0.0.0:80->80/tcp                   local-wordpress
 3b2678b45ad2        mysql:5.7           "docker-entrypoint.s…"   7 hours ago         Up 7 hours          33060/tcp, 0.0.0.0:18766->3306/tcp   local-wordpress-db
 ```
 
+You can see from our above example, that the container ID for wordpress is *ed72061e0466* and the database container is *3b2678b45ad2*
+
+#### PHP Error monitoring
+
+On mac and linux, you can use the following command to show a continuous reading of errors on your Wordpress install. Grab the ID from your wordpress container using the above instructions.
+
+```
+docker logs -f CONTAINER_ID 2>&1 >/dev/null | grep -i error
+```
+
+Swap CONTAINER_ID with the ID docker has assigned to your running container. Here is an example using the above example
+
+```
+docker logs -f ed72061e0466 2>&1 >/dev/null | grep -i error
+```
+
+#### WP Cli
+
+Example setup of test instance using WP-Cli. This can be run after the setup.sh script to setup your wordpress instance.
+
+```
+docker-compose run wpcli wp core install --path=/var/www/html  --url=http://localhost --title="Local Wordpress" --admin_user=admin --admin_email=my@email.com --admin_password=mypassword 
+```
+
+#### Exporting the db using the command line
+
+Using the instructions above, find your container ID for the local-wordpress-db  container(the example above shows *3b2678b45ad2*)
+
+```
+docker exec CONTAINER_ID /usr/bin/mysqldump -u root --password=somewordpress wordpress_db > backup.sql
+```
+
+Example of command with container ID from above example of `ps` output
+
+```
+docker exec 3b2678b45ad2 /usr/bin/mysqldump -u root --password=somewordpress wordpress_db > backup.sql
+```
