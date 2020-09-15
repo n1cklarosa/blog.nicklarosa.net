@@ -1,11 +1,15 @@
 :root {
   --content-w-regular: 960px;
   --content-w-blog: 680px;
-  --content-w-narrow: 560px;
-
+  --content-w-narrow: 560px; 
   box-sizing: border-box;
 }
 
 a {
   background-image: none !important;
+}
+
+
+body{
+  /* background-color:#f4f4f4; */
 }

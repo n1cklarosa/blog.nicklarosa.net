@@ -1,5 +1,4 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react" 
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
@@ -9,7 +8,7 @@ import SEO from "../components/seo"
 import { Flex } from "@chakra-ui/core"
 
 const Repositories = ({ data }) => {
-  const { name, avatarUrl, repositories } = data.githubData.data.viewer
+  const { repositories } = data.githubData.data.viewer
   return (
     <Layout>
       <PageWrapper>

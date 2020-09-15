@@ -1,32 +1,38 @@
 import React from "react"
-import { Box } from "@chakra-ui/core"
+import { Flex, Box, Heading } from "@chakra-ui/core"
 import { Link } from "gatsby"
 import _ from "lodash"
 import Img from "gatsby-image"
-// import Zoom from "react-reveal/Zoom" 
+// import Zoom from "react-reveal/Zoom"
 
 import style from "./article-tile.module.css"
 
 const ArticleTile = ({ article, index }) => (
-  
-    <Box
-      className={style.tile}
-      w={{sm:"100%",lg:"50%", xl: 1/3}}
-      post={article}
-      px={3}
-      data-sal="slide-up"
-      data-sal-easing="ease"
-    >
+  <Flex
+    w={{ base: "100%" }}
+    flexWrap={{ base: "wrap", md: "nowrap" }}
+    mb={"40px"}
+    alignItems={"center"}
+    boxShadow=" 0px 7px 30px -3px rgba(0,0,0,0.3)" 
+    backgroundColor={"white"}
+  >
+    <Box w={{ base: "100%", md: "40%" }}>
       <Link to={article.fields.slug}>
         <Img
           fluid={article.frontmatter.featimg.childImageSharp.fluid}
           alt={article.frontmatter.title}
-          className={style.tile__image}
         />
       </Link>
+    </Box>
+    <Box
       
+      w={{ base: "100%", md: "60%" }} 
+      p={"30px"}
+    >
       <Link to={article.fields.slug}>
-        <h3 className={style.heading}>{article.frontmatter.title}</h3>
+        <Heading as="h2" size={"md"} mt={0}>
+          {article.frontmatter.title}
+        </Heading>
       </Link>
       <p>{article.excerpt}</p>
       <div className={style.meta__info}>
@@ -38,7 +44,7 @@ const ArticleTile = ({ article, index }) => (
         ])}
       </div>
     </Box>
-   
+  </Flex>
 )
 
 export default ArticleTile

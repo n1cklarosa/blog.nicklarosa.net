@@ -12,7 +12,7 @@ module.exports = {
       link: `/blog`,
     },
     {
-      title: `GitHub Projects`,
+      title: `GitHub`,
       link: `/repositories`,
     },
   ],

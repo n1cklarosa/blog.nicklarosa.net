@@ -1,7 +1,14 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import { Flex, Box, Button, MenuItem, Collapse } from "@chakra-ui/core"
+import {
+  Flex,
+  Box,
+  Button,
+  Collapse,
+  useColorMode,
+  Switch,
+} from "@chakra-ui/core"
 import { PageWrapper } from "../../styled"
 import data from "../../../../content/data"
 
@@ -12,6 +19,7 @@ import "./header.scss"
 
 const Header = ({ siteTitle, menuItems }) => {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
       <header
@@ -47,9 +55,10 @@ const Header = ({ siteTitle, menuItems }) => {
                 </Link>
               </h1>
             </Box>
-            <Box d={{ base: "none", lg: "block" }}>
+            <Flex d={{ base: "none", lg: "flex" }} alignItems={"center"}>
               <SiteNav menuItems={data.siteMenu} />
-            </Box>
+          
+            </Flex>
             <Box d={{ base: "block", lg: "none" }}>
               <Button
                 aria-label={"Toggle Mobile Menu"}
@@ -71,9 +80,7 @@ const Header = ({ siteTitle, menuItems }) => {
           </Flex>
         </PageWrapper>
       </header>
-      <Collapse
-        isOpen={mobileOpen}
-      >
+      <Collapse isOpen={mobileOpen}>
         <PageWrapper>
           <Box w="100%">
             <ul

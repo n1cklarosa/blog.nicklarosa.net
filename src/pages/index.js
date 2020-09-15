@@ -65,7 +65,7 @@ export const pageQuery = graphql`
             author
             featimg {
               childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 200, cropFocus: CENTER) {
+                fluid(maxWidth: 370, maxHeight: 370, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

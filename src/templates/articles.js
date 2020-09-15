@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
-import { Flex } from "@chakra-ui/core"
+import SubjectTags from "../components/subjects/subjectTags"
+import { Box } from "@chakra-ui/core"
 import SEO from "../components/seo"
 
 import style from "./articles.module.css"
@@ -25,11 +26,12 @@ const ArticleIndex = ({ data, pageContext, location }) => {
       />
       <section className={style.articlelist}>
         <h2 className={style.heading}>Articles</h2>
-        <Flex flexWrap={'wrap'}>
+        {/* <SubjectTags /> */}
+        <Box >
           {posts.map(({ node }, index) => (
             <ArticleTile key={node.fields.slug} article={node} index={index} />
           ))}
-        </Flex>
+        </Box>
         <Pagination pageContext={pageContext} />
       </section>
     </Layout>
@@ -56,7 +58,7 @@ export const query = graphql`
             author
             featimg {
               childImageSharp {
-                fluid(maxWidth: 300, maxHeight: 200, cropFocus: CENTER) {
+                fluid(maxWidth: 370, maxHeight: 370, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
