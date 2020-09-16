@@ -126,7 +126,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: white;
   left: ${({ open }) => open  ? 0: '-100vw' };
-  visibility: ${({ open }) => open  ? 'visible': 'hiddne' };
+  visibility: ${({ open }) => open  ? 'visible': 'hidden' };
   height: 100vh;
   text-align: left;
   z-index:9;
