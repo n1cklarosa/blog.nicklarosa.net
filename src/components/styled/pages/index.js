@@ -34,6 +34,7 @@ export const PageTitle = styled.h1`
   font-size: 35px;
   text-align:center;
   margin-top:0;
+  color:white;
   @media screen and (min-width: ${variables.breakpointPhone}) {
     font-size: 65px;
   }
@@ -46,6 +47,7 @@ export const TypeWriterCss = styled.h2`
   text-align:left;
   line-height:1.1em;
   min-height:130px;
+  color:white;
   @media screen and (min-width: ${variables.breakpointPhone}) {
     font-size: 70px; 
      min-height:310px;
@@ -67,6 +69,9 @@ export const PageLeader = styled.div`
   }
   &.no-margin{
     margin-bottom:0px;
+  }
+  h1{
+    color:white;
   }
 `
 
