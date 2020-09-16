@@ -31,7 +31,7 @@ const HomePageLeader = () => {
         params={{
           particles: {
             number: {
-              value: 99,
+              value: 12,
               density: {
                 enable: true,
                 value_area: 800,
@@ -84,11 +84,11 @@ const HomePageLeader = () => {
             move: {
               enable: true,
               speed: 0.5,
-              direction: "none",
+              direction: "up",
               random: true,
               straight: false,
               out_mode: "out",
-              bounce: false,
+              bounce: true,
               attract: {
                 enable: true,
                 rotateX: 600,

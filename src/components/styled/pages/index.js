@@ -26,13 +26,13 @@ export const PageTitle = styled.h1`
   }
 `
 export const TypeWriterCss = styled.h2`
-  font-size: 35px;
+  font-size: 32px;
   text-align:left;
-  line-height:1.2em;
+  line-height:1.1em;
   min-height:130px;
   @media screen and (min-width: ${variables.breakpointPhone}) {
-    font-size: 85px; 
-    min-height:310px;
+    font-size: 70px; 
+     min-height:310px;
   }
 `
 

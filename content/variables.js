@@ -1,16 +1,19 @@
   
 import typography from "../src/utils/typography"
 
+var primary = "#2b2d42"
+var primaryLighter = "#9c9fbf"
+
 export default {
-    primary: "#3185fc",
+    primary: primary,
     inverse: "#fff",
     // colors
     bodyFont: "Georgia",
-    headingFont: "Montserrat, Georgia, serif",
+    headingFont: "Montserrat, Georgia, serif ",
     darkGrey: "#333447",
     black: "#000",
     lightGray: "#f4f4f4",
-    backgroundGradient: "#3185fc linear-gradient(147deg,#3185fc,#3185fc 25%,#86b8fd) no-repeat",
+    backgroundGradient: `${primary} linear-gradient(147deg,${primary} ,${primary}  25%,${primaryLighter} ) no-repeat`,
     leaderTitleFontSizeDesktop:"65px", 
     leaderTitleFontSizeMobile:"35px",  
     // grid

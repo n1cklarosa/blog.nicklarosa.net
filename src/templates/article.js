@@ -30,6 +30,7 @@ export default ({ data }) => {
             w={"100%"}
             justifyContent={{ base: "center", lg: "space-between" }}
             flexWrap={{ base: "wrap", lg: "nowrap" }}
+            alignItems={"center"}
           >
             <Box w={{ base: "100%", lg: "50%" }}>
               <PageTitle className={"text-left"}>
