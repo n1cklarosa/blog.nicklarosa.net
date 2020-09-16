@@ -3,8 +3,7 @@ import { graphql } from "gatsby"
 // import Img from "gatsby-image"
 // import _ from "lodash"
 import { Box } from "@chakra-ui/core"
-
-import style from "./articles.module.css"
+ 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import Pagination from "../components/global/pagination/pagination"
@@ -13,8 +12,7 @@ import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
 
 const ArticleIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
-  const { subject } = pageContext
-  console.log(pageContext)
+  const { subject } = pageContext 
 
   let pageHeader = `Articles`
   if (subject) {

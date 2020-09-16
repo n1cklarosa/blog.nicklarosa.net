@@ -15,6 +15,10 @@ module.exports = {
       title: `GitHub`,
       link: `/repositories`,
     },
+    {
+      title: `Contact`,
+      link: `/contact`,
+    },
   ],
   githubApiQuery: `query ($number_of_repos: Int!) {
     viewer {
