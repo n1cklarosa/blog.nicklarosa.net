@@ -104,7 +104,7 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: white;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ open }) => open === false ? 'translateX(-100%)': 'translateX(0)' };
   height: 100vh;
   text-align: left;
   z-index:9;

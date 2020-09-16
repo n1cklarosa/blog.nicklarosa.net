@@ -38,7 +38,7 @@ const HomePageLeader = () => {
               },
             },
             color: {
-              value: "#9bc4fd",
+              value: variables.primaryLight,
             },
             shape: {
               type: "circle",

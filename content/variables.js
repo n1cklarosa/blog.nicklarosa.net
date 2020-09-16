@@ -6,6 +6,7 @@ var primaryLighter = "#9c9fbf"
 
 export default {
     primary: primary,
+    primaryLight:primaryLighter,
     inverse: "#fff",
     // colors
     bodyFont: "Georgia",
