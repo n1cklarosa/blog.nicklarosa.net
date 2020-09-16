@@ -13,6 +13,7 @@ export const TileTitle = styled.h2`
   }
   @media screen and (min-width: ${variables.breakpointPhone}) {
     font-size: 32px;
+    margin-bottom:30px;
   }
   color:${variables.primary};
   margin-top:0;
