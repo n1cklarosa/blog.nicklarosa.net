@@ -140,12 +140,12 @@ const HomePageLeader = () => {
       />
       <PageWrapper>
         <Flex
-          flexWrap={{ base: "wrap", md: "nowrap" }}
+          flexWrap={{ base: "wrap", sm: "nowrap" }}
           className={"wrapper-bit"}
           alignItems={"top"}
           w={"100%"}
         >
-          <Box w={{ base: "100%", md: "60%" }} pr={"40px"}>
+          <Box w={{ base: "100%", sm: "60%" }} pr={"40px"}>
             <TypeWriterCss>
               <Typewriter
                 onInit={typewriter => {
@@ -197,7 +197,7 @@ const HomePageLeader = () => {
             </TypeWriterCss>
             <Text>A Web Developers Blog</Text>
           </Box>
-          <Box w={{ base: "100%", md: "40%" }}>
+          <Box w={{ base: "100%", sm: "40%" }}>
             <Image
               fluid={data.avatar.childImageSharp.fluid}
               style={{

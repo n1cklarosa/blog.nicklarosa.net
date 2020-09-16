@@ -79,7 +79,7 @@ const Header = ({ siteTitle, menuItems }) => {
           </Flex>
         </PageWrapper>
       </header>
-      <StyledMenu  open={mobileOpen}>
+      <StyledMenu open={mobileOpen}>
         <ul style={{ listStyleType: "none", paddingLeft: 0, marginLeft: 0 }}>
           {data.siteMenu.map(props => (
             <li key={props.title}>

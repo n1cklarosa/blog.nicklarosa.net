@@ -104,7 +104,7 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: white;
-  transform: ${({ open }) => open === false ? 'translateX(-100%)': 'translateX(0)' };
+  transform: ${({ open }) => open  ? 'translateX(0%)': 'translateX(-100%)' };
   height: 100vh;
   text-align: left;
   z-index:9;
@@ -118,6 +118,9 @@ export const StyledMenu = styled.nav`
       width: 100%;
     // }
 
+    @media (min-width: 768px) {
+      display:none;
+    }
   a {
     font-size: 2rem;
     text-transform: uppercase;
