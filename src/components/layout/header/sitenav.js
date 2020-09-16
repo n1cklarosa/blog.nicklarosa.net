@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import style from "./sitenav.module.css"
+import variables from "../../../../content/variables"
 
 const SiteNav = ({ menuItems }) => {
   return (
@@ -14,9 +15,10 @@ const SiteNav = ({ menuItems }) => {
               style={{
                 fontSize: "14px",
                 fontWeight: "700",
-                textDecoration:"none",
+                textDecoration: "none",
                 color: "white",
                 textTransform: "uppercase",
+                fontFamily: variables.headingFont,
               }}
             >
               {props.title}

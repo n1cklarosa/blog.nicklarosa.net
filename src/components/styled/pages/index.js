@@ -5,9 +5,19 @@ export const Title = styled.h1`
   font-size: 2rem;
 `
 
+export const TileTitle = styled.h2`
+  font-size: 25px;
+  @media screen and (min-width: ${variables.breakpointPhone}) {
+    font-size: 32px;
+  }
+  color:${variables.primary};
+  margin-top:0;
+`
+
 export const PageTitle = styled.h1`
   font-size: 35px;
   text-align:center;
+  margin-top:0;
   @media screen and (min-width: ${variables.breakpointPhone}) {
     font-size: 65px;
   }

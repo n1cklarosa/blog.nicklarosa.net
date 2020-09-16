@@ -1,14 +1,17 @@
 import React from "react"
 import { Flex, Box, Heading } from "@chakra-ui/core"
+import typography, { bodyFontFamily } from "../../utils/typography"
+import { TileTitle } from "../../components/styled"
 import { Link } from "gatsby"
 import _ from "lodash"
 import Img from "gatsby-image" 
 // import Zoom from "react-reveal/Zoom"
 
+
 import variables from "../../../content/variables"
 
 import style from "./article-tile.module.css"
-
+console.log("here", typography)
 const ArticleTile = ({ article, index }) => (
   <Flex
     w={{ base: "100%" }}
@@ -32,9 +35,9 @@ const ArticleTile = ({ article, index }) => (
       p={"30px"}
     >
       <Link to={article.fields.slug} color={variables.primary} style={{textDecoration:"none"}} >
-        <Heading as="h2" size={{base:"md",md:'lg'}} mt={0} color={variables.primary}>
+        <TileTitle  color={variables.primary}>
           {article.frontmatter.title}
-        </Heading>
+        </TileTitle>
       </Link>
       <p>{article.excerpt}</p>
       <div className={style.meta__info}>

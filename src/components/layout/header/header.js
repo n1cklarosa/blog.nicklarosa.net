@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/core"
 import { PageWrapper, StyledBurger, StyledMenu } from "../../styled"
 import data from "../../../../content/data"
+import variables from "../../../../content/variables"
 
 import Logo from "../../global/logo/logo"
 import SiteNav from "./sitenav"
@@ -82,7 +83,7 @@ const Header = ({ siteTitle, menuItems }) => {
         <ul style={{ listStyleType: "none", paddingLeft: 0, marginLeft: 0 }}>
           {data.siteMenu.map(props => (
             <li key={props.title}>
-              <Link to={props.link}>{props.title}</Link>
+              <Link style={{fontFamily:variables.headingFont}} to={props.link}>{props.title}</Link>
             </li>
           ))}
         </ul>

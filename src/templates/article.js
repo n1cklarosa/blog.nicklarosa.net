@@ -26,12 +26,12 @@ export default ({ data }) => {
         />
         <PageLeader className={"no-margin"}>
           <Flex
-            px={{base:"12px", md:"100px"}}
+            px={{ base: "12px", md: "100px" }}
             w={"100%"}
-            justifyContent={"space-between"}
-            flexWrap={{ base: "wrap", md: "nowrap" }}
+            justifyContent={{ base: "center", lg: "space-between" }}
+            flexWrap={{ base: "wrap", lg: "nowrap" }}
           >
-            <Box w={{ base: "100%", md: "50%" }}>
+            <Box w={{ base: "100%", lg: "50%" }}>
               <PageTitle className={"text-left"}>
                 {article.frontmatter.title}
               </PageTitle>
@@ -56,12 +56,13 @@ export default ({ data }) => {
                 ])}
               </div>
             </Box>
-            <Box w={{ base: "100%", md: "25%" }}>
+            <Box px={{ base: "15px", lg: "0" }} boxSizing={'border-box'} w={{ base: "100%", lg: "25%" }}>
               {article.frontmatter.featimg && (
-                <figure className={style.featimg}>
+                <figure >
                   <Img
                     fluid={article.frontmatter.featimg.childImageSharp.fluid}
                     alt={article.frontmatter.title}
+                    style={{ maxWidth: "100%", height: "auto" }}
                   />
                 </figure>
               )}
@@ -69,12 +70,15 @@ export default ({ data }) => {
           </Flex>
         </PageLeader>
 
-        <div className={style.article__content_wrapper}>
+        <Box
+          px={{ base: "15px", lg: "none" }}
+          className={style.article__content_wrapper}
+        >
           <div
             className={style.article__content}
             dangerouslySetInnerHTML={{ __html: article.html }}
           />
-        </div>
+        </Box>
 
         <div className={style.article__nav_wrapper}></div>
       </article>

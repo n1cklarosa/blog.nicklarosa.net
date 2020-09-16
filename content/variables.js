@@ -1,12 +1,16 @@
   
+import typography from "../src/utils/typography"
+
 export default {
-    primary: "#453750",
+    primary: "#3185fc",
     inverse: "#fff",
     // colors
+    bodyFont: "Georgia",
+    headingFont: "Montserrat, Georgia, serif",
     darkGrey: "#333447",
     black: "#000",
     lightGray: "#f4f4f4",
-    backgroundGradient: "#453750 linear-gradient(147deg,#453750,#453750 25%,#a692b5) no-repeat",
+    backgroundGradient: "#3185fc linear-gradient(147deg,#3185fc,#3185fc 25%,#86b8fd) no-repeat",
     leaderTitleFontSizeDesktop:"65px", 
     leaderTitleFontSizeMobile:"35px",  
     // grid
