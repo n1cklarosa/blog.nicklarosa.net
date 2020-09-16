@@ -1,7 +1,7 @@
 import React from "react"
 import { Flex, Box, Heading } from "@chakra-ui/core"
 import typography, { bodyFontFamily } from "../../utils/typography"
-import { TileTitle } from "../../components/styled"
+import { TileTitle, TileP } from "../../components/styled"
 import { Link } from "gatsby"
 import _ from "lodash"
 import Img from "gatsby-image" 
@@ -15,13 +15,13 @@ console.log("here", typography)
 const ArticleTile = ({ article, index }) => (
   <Flex
     w={{ base: "100%" }}
-    flexWrap={{ base: "wrap", md: "nowrap" }}
+    flexWrap={{ base: "wrap", sm: "nowrap" }}
     mb={"60px"}
     alignItems={"center"}
     boxShadow={`0px 7px 30px -3px ${variables.primary}`}
     backgroundColor={"white"}
   >
-    <Box w={{ base: "100%", md: "40%" }}>
+    <Box w={{ base: "100%", sm:"30%", md: "40%" }}>
       <Link to={article.fields.slug}>
         <Img
           fluid={article.frontmatter.featimg.childImageSharp.fluid}
@@ -31,15 +31,15 @@ const ArticleTile = ({ article, index }) => (
     </Box>
     <Box
       
-      w={{ base: "100%", md: "60%" }} 
-      p={"30px"}
+      w={{ base: "100%",sm:"70%", md: "60%" }} 
+      px={{base:"12px",md:"30px"}} py={{base:"20px", sm:"0px", md:"30px"}}
     >
       <Link to={article.fields.slug} color={variables.primary} style={{textDecoration:"none"}} >
         <TileTitle  color={variables.primary}>
           {article.frontmatter.title}
         </TileTitle>
       </Link>
-      <p>{article.excerpt}</p>
+      <TileP>{article.excerpt}</TileP>
       <div className={style.meta__info}>
         {article.frontmatter.subject.map((subject, index) => [
           index > 0 && ", ",

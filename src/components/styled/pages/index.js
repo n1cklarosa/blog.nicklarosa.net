@@ -7,12 +7,28 @@ export const Title = styled.h1`
 
 export const TileTitle = styled.h2`
   font-size: 25px;
+  @media screen and (min-width: ${variables.breakpointSm}) {
+    font-size: 20px;
+    margin-bottom:0;
+  }
   @media screen and (min-width: ${variables.breakpointPhone}) {
     font-size: 32px;
   }
   color:${variables.primary};
   margin-top:0;
 `
+
+export const TileP = styled.p`
+   
+  @media screen and (min-width: ${variables.breakpointSm}) {
+    display:none;
+  }
+  @media screen and (min-width: ${variables.breakpointPhone}) {
+    display:inline;
+  }
+   
+`
+
 
 export const PageTitle = styled.h1`
   font-size: 35px;
@@ -105,6 +121,7 @@ export const StyledMenu = styled.nav`
   justify-content: center;
   background: white;
   left: ${({ open }) => open  ? 0: '-100vw' };
+  visibility: ${({ open }) => open  ? 'visible': 'hiddne' };
   height: 100vh;
   text-align: left;
   z-index:9;

@@ -22,6 +22,7 @@ export default {
     wrapperWidth: "960px",
     blogWidth: "560px", 
     gutter: "4%",
+    breakpointSm:"480px",
     breakpointPhone: "768px",
     breakpointTablet: "1024px",
     breakpointLaptop: "1200px",

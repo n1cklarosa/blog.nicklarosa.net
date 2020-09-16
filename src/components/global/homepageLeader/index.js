@@ -200,11 +200,7 @@ const HomePageLeader = () => {
           <Box w={{ base: "100%", sm: "40%" }}>
             <Image
               fluid={data.avatar.childImageSharp.fluid}
-              style={{
-                marginBottom: 0,
-                minWidth: 250,
-                borderRadius: `100%`,
-              }}
+             
               imgStyle={{
                 borderRadius: `50%`,
               }}
