@@ -104,18 +104,18 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: white;
-  transform: ${({ open }) => open  ? 'translateX(0%)': 'translateX(-100%)' };
+  left: ${({ open }) => open  ? 0: '-100vw' };
   height: 100vh;
   text-align: left;
   z-index:9;
   padding: 2rem;
   position: absolute;
   top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
+  // left: 0;
+  transition: left 0.3s ease-in-out;
 
   // @media (max-width: 576px) {
-      width: 100%;
+      width: 100vw;
     // }
 
     @media (min-width: 768px) {

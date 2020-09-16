@@ -29,10 +29,10 @@ export default ({ data }) => {
             px={{ base: "12px", md: "100px" }}
             w={"100%"}
             justifyContent={{ base: "center", lg: "space-between" }}
-            flexWrap={{ base: "wrap", lg: "nowrap" }}
+            flexWrap={{ base: "wrap", sm: "nowrap" }}
             alignItems={"center"}
           >
-            <Box w={{ base: "100%", lg: "50%" }}>
+            <Box w={{ base: "100%", sm:"70%", lg: "50%" }}>
               <PageTitle className={"text-left"}>
                 {article.frontmatter.title}
               </PageTitle>
@@ -57,7 +57,7 @@ export default ({ data }) => {
                 ])}
               </div>
             </Box>
-            <Box px={{ base: "15px", lg: "0" }} boxSizing={'border-box'} w={{ base: "100%", lg: "25%" }}>
+            <Box px={{ base: "15px",  lg: "0%" }} boxSizing={'border-box'} w={{ base: "100%", sm:"30%", lg: "25%" }}>
               {article.frontmatter.featimg && (
                 <figure >
                   <Img
