@@ -9,7 +9,7 @@ import {
   useColorMode,
   Switch,
 } from "@chakra-ui/core"
-import { PageWrapper } from "../../styled"
+import { PageWrapper, StyledBurger, StyledMenu } from "../../styled"
 import data from "../../../../content/data"
 
 import Logo from "../../global/logo/logo"
@@ -24,7 +24,12 @@ const Header = ({ siteTitle, menuItems }) => {
     <>
       <header
         style={{
-          marginBottom: `1.45rem`,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: "transparent",
+          zIndex: 11,
         }}
       >
         <PageWrapper>
@@ -57,44 +62,31 @@ const Header = ({ siteTitle, menuItems }) => {
             </Box>
             <Flex d={{ base: "none", lg: "flex" }} alignItems={"center"}>
               <SiteNav menuItems={data.siteMenu} />
-          
             </Flex>
             <Box d={{ base: "block", lg: "none" }}>
-              <Button
+               
+              <StyledBurger
+                open={mobileOpen}
                 aria-label={"Toggle Mobile Menu"}
                 onClick={() => setMobileOpen(!mobileOpen)}
-                variant="ghost"
-                variantColor="black"
               >
-                <svg
-                  fill="black"
-                  width="25px"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Menu</title>
-                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                </svg>
-              </Button>
+                <div />
+                <div />
+                <div />
+              </StyledBurger>
             </Box>
           </Flex>
         </PageWrapper>
       </header>
-      <Collapse isOpen={mobileOpen}>
-        <PageWrapper>
-          <Box w="100%">
-            <ul
-              style={{ listStyleType: "none", paddingLeft: 0, marginLeft: 0 }}
-            >
-              {data.siteMenu.map(props => (
-                <li key={props.title}>
-                  <Link to={props.link}>{props.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </Box>
-        </PageWrapper>
-      </Collapse>
+      <StyledMenu className={'styled-menu'} open={mobileOpen}>
+        <ul style={{ listStyleType: "none", paddingLeft: 0, marginLeft: 0 }}>
+          {data.siteMenu.map(props => (
+            <li key={props.title}>
+              <Link to={props.link}>{props.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </StyledMenu>
     </>
   )
 }

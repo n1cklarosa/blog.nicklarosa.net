@@ -3,7 +3,9 @@ import { graphql, Link } from "gatsby"
 import { Flex } from "@chakra-ui/core" 
 
 import ArticleTile from "../components/articles/article-tile"
+import HomePageLeader from "../components/global/homepageLeader"
 import Layout from "../components/layout/layout"
+import { PageWrapper, Title } from "../components/styled"
 import SEO from "../components/seo"
 
 import style from "./index.module.css"
@@ -17,21 +19,9 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: "var(--content-w-regular)",
-          width: "100%",
-          padding: `0 1.45rem`,
-          boxSizing: "border-box",
-        }}
-      >
-        <div className={style.hero}>
-          <p>Hey, I'm Nick</p>
-          <p>
-            A full stack javascript and php developer from Sydney Australia.
-          </p>
-        </div>
+      <HomePageLeader />
+      <PageWrapper>
+        <Title>Latest Blog Posts</Title>
         <Flex flexWrap={'wrap'}>
           {Posts}
         </Flex>
@@ -41,7 +31,7 @@ const IndexPage = ({ data }) => {
             <Link to={"/blog"}>View Blog</Link>
           </p>
         </div>
-      </div>
+      </PageWrapper>
     </Layout>
   )
 }

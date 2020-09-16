@@ -9,7 +9,18 @@ const SiteNav = ({ menuItems }) => {
       <ul>
         {menuItems.map(props => (
           <li key={props.title}>
-            <Link to={props.link}>{props.title}</Link>
+            <Link
+              to={props.link}
+              style={{
+                fontSize: "14px",
+                fontWeight: "700",
+                textDecoration:"none",
+                color: "white",
+                textTransform: "uppercase",
+              }}
+            >
+              {props.title}
+            </Link>
           </li>
         ))}
       </ul>

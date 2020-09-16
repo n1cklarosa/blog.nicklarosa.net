@@ -2,8 +2,10 @@ import React from "react"
 import { Flex, Box, Heading } from "@chakra-ui/core"
 import { Link } from "gatsby"
 import _ from "lodash"
-import Img from "gatsby-image"
+import Img from "gatsby-image" 
 // import Zoom from "react-reveal/Zoom"
+
+import variables from "../../../content/variables"
 
 import style from "./article-tile.module.css"
 
@@ -11,9 +13,9 @@ const ArticleTile = ({ article, index }) => (
   <Flex
     w={{ base: "100%" }}
     flexWrap={{ base: "wrap", md: "nowrap" }}
-    mb={"40px"}
+    mb={"60px"}
     alignItems={"center"}
-    boxShadow=" 0px 7px 30px -3px rgba(0,0,0,0.3)" 
+    boxShadow={`0px 7px 30px -3px ${variables.primary}`}
     backgroundColor={"white"}
   >
     <Box w={{ base: "100%", md: "40%" }}>
@@ -29,8 +31,8 @@ const ArticleTile = ({ article, index }) => (
       w={{ base: "100%", md: "60%" }} 
       p={"30px"}
     >
-      <Link to={article.fields.slug}>
-        <Heading as="h2" size={"md"} mt={0}>
+      <Link to={article.fields.slug} color={variables.primary} style={{textDecoration:"none"}} >
+        <Heading as="h2" size={{base:"md",md:'lg'}} mt={0} color={variables.primary}>
           {article.frontmatter.title}
         </Heading>
       </Link>
@@ -38,7 +40,7 @@ const ArticleTile = ({ article, index }) => (
       <div className={style.meta__info}>
         {article.frontmatter.subject.map((subject, index) => [
           index > 0 && ", ",
-          <Link key={index} to={`/subjects/${_.kebabCase(subject)}`}>
+          <Link key={index} to={`/subjects/${_.kebabCase(subject)}`} styles={{color:variables.primary}}>
             {subject}
           </Link>,
         ])}

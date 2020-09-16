@@ -9,6 +9,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
 import Pagination from "../components/global/pagination/pagination"
 import ArticleTile from "../components/articles/article-tile"
+import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
 
 const ArticleIndex = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
@@ -30,15 +31,18 @@ const ArticleIndex = ({ data, pageContext }) => {
         // Boolean indicating whether this is an article:
         // article
       />
-      <section className={style.articlelist}>
-        <h2>{pageHeader}</h2>
-        <Box 
-        >
+      <PageLeader>
+        <PageWrapper>
+          <PageTitle>{pageHeader}</PageTitle>
+        </PageWrapper>
+      </PageLeader>
+      <PageWrapper>
+        <Box>
           {posts.map(({ node }, index) => (
             <ArticleTile article={node} key={index} />
           ))}
         </Box>
-      </section>
+      </PageWrapper>
       <Pagination pageContext={pageContext} />
     </Layout>
   )

@@ -10,6 +10,7 @@ import style from "./articles.module.css"
 import Layout from "../components/layout/layout"
 import Pagination from "../components/global/pagination/pagination"
 import ArticleTile from "../components/articles/article-tile"
+import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
 
 const ArticleIndex = ({ data, pageContext, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -22,18 +23,22 @@ const ArticleIndex = ({ data, pageContext, location }) => {
         image="/logo.png"
         pathname="/articles"
         // Boolean indicating whether this is an article:
-        // article
+        article={false}
       />
-      <section className={style.articlelist}>
-        <h2 className={style.heading}>Articles</h2>
+      <PageLeader>
+        <PageWrapper>
+          <PageTitle>Articles</PageTitle>
+        </PageWrapper>
+      </PageLeader>
+      <PageWrapper>
         {/* <SubjectTags /> */}
-        <Box >
+        <Box backgroundColor={"white"} p={0} zIndex={12}>
           {posts.map(({ node }, index) => (
             <ArticleTile key={node.fields.slug} article={node} index={index} />
           ))}
         </Box>
         <Pagination pageContext={pageContext} />
-      </section>
+      </PageWrapper>
     </Layout>
   )
 }

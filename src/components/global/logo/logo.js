@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "./logo-black.svg"
+import logo from "./logo.svg"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

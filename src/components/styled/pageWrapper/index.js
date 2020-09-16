@@ -7,9 +7,9 @@ export const PageWrapper = styled.div`
   margin-right: auto;
   margin: 0 auto;
   max-width: ${variables.wrapperWidth};
-  width: "100%";
+  width: 100%;
   padding: 0 1.45rem;
-  box-sizing: "border-box";
+  box-sizing: border-box;
 
   &.wrapper {
     max-width: ${variables.wrapperWidth};

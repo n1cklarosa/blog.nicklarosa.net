@@ -1,9 +1,9 @@
-import React from "react" 
+import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import Repository from "../components/repositories/repository"
-import { PageWrapper, Title } from "../components/styled"
+import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
 import SEO from "../components/seo"
 import { Flex } from "@chakra-ui/core"
 
@@ -11,12 +11,16 @@ const Repositories = ({ data }) => {
   const { repositories } = data.githubData.data.viewer
   return (
     <Layout>
+      <SEO
+        title="Github Repositories"
+        description="Some of my recent public work found on GitHUb.com"
+      />
+      <PageLeader>
+        <PageWrapper>
+          <PageTitle>GitHub Repositories</PageTitle>
+        </PageWrapper>
+      </PageLeader>
       <PageWrapper>
-        <SEO
-          title="Github Repositories"
-          description="Some of my recent public work found on GitHUb.com"
-        />
-        <Title>GitHub Repositories</Title>
         <Flex wrap="wrap">
           {repositories.nodes
             .map((repo, index) => <Repository key={index} repo={repo} />)
