@@ -26,7 +26,7 @@ module.exports = {
       avatarUrl
       isHireable
       resourcePath
-      repositories(last: $number_of_repos, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction:ASC } ) {
+      repositories(last: $number_of_repos, ownerAffiliations:OWNER, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction:ASC } ) {
         nodes {
           name
           description

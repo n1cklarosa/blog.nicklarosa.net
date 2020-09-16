@@ -1,12 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import ContactForm from "../components/global/contactForm/contactForm"
-import Repository from "../components/repositories/repository"
+// import Repository from "../components/repositories/repository"
 import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
 import SEO from "../components/seo"
-import { Flex } from "@chakra-ui/core"
+// import { Flex } from "@chakra-ui/core"
 
 const Contact = ( ) => { 
   return (

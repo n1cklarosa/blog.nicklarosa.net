@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { PageWrapper, PageLeader, PageTitle, TypeWriterCss } from "../../styled"
+import { PageWrapper, PageLeader, TypeWriterCss } from "../../styled"
 import variables from "../../../../content/variables"
 import { Flex, Box, Text } from "@chakra-ui/core"
 import Typewriter from "typewriter-effect"
@@ -31,7 +31,7 @@ const HomePageLeader = () => {
         params={{
           particles: {
             number: {
-              value: 12,
+              value: 22,
               density: {
                 enable: true,
                 value_area: 800,

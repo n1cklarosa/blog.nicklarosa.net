@@ -4,10 +4,10 @@ import React, { useState } from "react"
 import {
   Flex,
   Box,
-  Button,
-  Collapse,
-  useColorMode,
-  Switch,
+  // Button,
+  // Collapse,
+  // useColorMode,
+  // Switch,
 } from "@chakra-ui/core"
 import { PageWrapper, StyledBurger, StyledMenu } from "../../styled"
 import data from "../../../../content/data"
@@ -20,7 +20,7 @@ import "./header.scss"
 
 const Header = ({ siteTitle, menuItems }) => {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { colorMode, toggleColorMode } = useColorMode()
+  // const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
       <header

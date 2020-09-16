@@ -1,6 +1,6 @@
 import React from "react"
-import { Flex, Box, Heading } from "@chakra-ui/core"
-import typography, { bodyFontFamily } from "../../utils/typography"
+import { Flex, Box } from "@chakra-ui/core"
+import typography from "../../utils/typography"
 import { TileTitle, TileP } from "../../components/styled"
 import { Link } from "gatsby"
 import _ from "lodash"

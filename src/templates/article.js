@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import _ from "lodash"
-import { PageWrapper, PageTitle, PageLeader } from "../components/styled"
+import { PageTitle, PageLeader } from "../components/styled"
 import SEO from "../components/seo"
 import { Flex, Box } from "@chakra-ui/core"
 
@@ -10,7 +10,6 @@ import Layout from "../components/layout/layout"
 import style from "./article.module.css"
 
 export default ({ data }) => {
-  console.log("data", data)
   const article = data.markdownRemark
 
   return (
@@ -28,11 +27,11 @@ export default ({ data }) => {
           <Flex
             px={{ base: "12px", md: "100px" }}
             w={"100%"}
-            justifyContent={{ base: "center", lg: "space-between" }}
+            justifyContent={{ base: "center", sm: "space-between" }}
             flexWrap={{ base: "wrap", sm: "nowrap" }}
             alignItems={"center"}
           >
-            <Box w={{ base: "100%", sm:"70%", lg: "50%" }}>
+            <Box w={{ base: "100%", sm: "70%", lg: "60%" }}>
               <PageTitle className={"text-left"}>
                 {article.frontmatter.title}
               </PageTitle>
@@ -45,7 +44,7 @@ export default ({ data }) => {
                     day: "numeric",
                     year: "numeric",
                   }
-                )}{" "}
+                )} 
               </div>
               <div className={style.article__tax}>
                 Filed under:{" "}
@@ -57,9 +56,13 @@ export default ({ data }) => {
                 ])}
               </div>
             </Box>
-            <Box px={{ base: "15px",  lg: "0%" }} boxSizing={'border-box'} w={{ base: "100%", sm:"30%", lg: "25%" }}>
+            <Box
+              px={{ base: "15px", lg: "0%" }}
+              boxSizing={"border-box"}
+              w={{ base: "100%", sm: "30%", lg: "25%" }}
+            >
               {article.frontmatter.featimg && (
-                <figure >
+                <figure>
                   <Img
                     fluid={article.frontmatter.featimg.childImageSharp.fluid}
                     alt={article.frontmatter.title}

@@ -1,5 +1,5 @@
   
-import typography from "../src/utils/typography"
+// import typography from "../src/utils/typography"
 
 var primary = "#2b2d42"
 var primaryLighter = "#9c9fbf"

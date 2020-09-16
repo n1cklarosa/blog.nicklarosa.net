@@ -9,6 +9,7 @@ import { Flex } from "@chakra-ui/core"
 
 const Repositories = ({ data }) => {
   const { repositories } = data.githubData.data.viewer
+  console.log("here", repositories)
   return (
     <Layout>
       <SEO
