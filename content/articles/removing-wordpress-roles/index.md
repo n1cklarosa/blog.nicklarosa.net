@@ -1,5 +1,5 @@
 ---
-title: Removing unnecessary Wordpress roles
+title: Removing unnecessary Wordpress Roles
 date: 2020-11-21
 subject: ["tutorial", "wordpress"]
 author: Nick La Rosa
