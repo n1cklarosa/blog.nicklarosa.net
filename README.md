@@ -1,5 +1,8 @@
-# A gatsby starter
+ 
+<h1 align="center">
+  blog.nicklarosa.net
+</h1>
 
-Here is the source for my blog found at https://blog.nicklarosa.net 
 
-Built with Gatsby
+The Gatsby code used to build my blog at blog.nicklarosa.net
+
