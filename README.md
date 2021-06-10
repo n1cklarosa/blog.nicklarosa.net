@@ -4,5 +4,5 @@
 </h1>
 
 
-The Gatsby code used to build my blog at blog.nicklarosa.net
+The Gatsby code used to build my blog at blog.nicklarosa.net. Built off gatsby-starter-blog
 
