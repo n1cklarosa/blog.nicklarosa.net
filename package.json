@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "blog.nicklarosa.net",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "The gatsby theme used on Blog.nicklarosa.net, utilizing Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Nick La Rosa <nick@nicklarosa.net>", 
   "dependencies": {
     "gatsby": "^3.6.2",
     "gatsby-plugin-feed": "^3.6.0",
