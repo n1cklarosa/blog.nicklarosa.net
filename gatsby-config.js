@@ -3,7 +3,7 @@ module.exports = {
     title: `Nick La Rosa's Web Dev Blog`,
     author: {
       name: `Nick La Rosa`,
-      summary: `lives in Sydney and work around the world.`,
+      summary: `who lives in Sydney making web sites and mobile apps.`,
     },
     description: `The personal blog for developer NIck La Rosa talking all things web.`,
     siteUrl: `https://blog.nicklarosa.net/`,
