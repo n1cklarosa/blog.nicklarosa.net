@@ -3,8 +3,9 @@
   "private": true,
   "description": "The gatsby theme used on Blog.nicklarosa.net, utilizing Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Nick La Rosa <nick@nicklarosa.net>", 
+  "author": "Nick La Rosa <nick@nicklarosa.net>",
   "dependencies": {
+    "aws-sdk": "^2.933.0",
     "gatsby": "^3.6.2",
     "gatsby-plugin-feed": "^3.6.0",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
@@ -24,12 +25,18 @@
     "gatsby-transformer-sharp": "^3.6.0",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
+    "react-awesome-reveal": "^3.7.2",
     "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.9.0",
+    "reaptcha": "^1.7.2",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "gatsby-source-github": "^0.0.2",
+    "netlify-lambda": "^2.0.10",
     "prettier": "2.2.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -49,6 +56,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lambda": "netlify-lambda build src/lambda"
   }
 }
