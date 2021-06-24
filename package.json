@@ -6,6 +6,7 @@
   "author": "Nick La Rosa <nick@nicklarosa.net>",
   "dependencies": {
     "aws-sdk": "^2.933.0",
+    "axios": "^0.21.1",
     "gatsby": "^3.6.2",
     "gatsby-plugin-feed": "^3.6.0",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
@@ -28,6 +29,7 @@
     "react-awesome-reveal": "^3.7.2",
     "react-dom": "^17.0.1",
     "react-google-recaptcha": "^2.1.0",
+    "react-google-recaptcha-v3": "^1.9.4",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.9.0",
     "reaptcha": "^1.7.2",

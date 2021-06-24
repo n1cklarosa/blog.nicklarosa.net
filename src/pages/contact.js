@@ -1,13 +1,19 @@
-import React, { useState } from "react"
+import React, { useState, useCallback, useEffect } from "react"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Recaptcha from "../components/recaptcha"
 import { useForm } from "react-hook-form"
 import Seo from "../components/seo"
 import Bio from "../components/bio"
-import Reaptcha from 'reaptcha'
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 const formApi = process.env.GATSBY_FORM_API
 
-const ContactPage = ({ location }) => {
+const ContactPage = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+//   const posts = data.allMarkdownRemark.nodes
+  const { executeRecaptcha } = useGoogleReCaptcha()
+  const [token, setToken] = useState("")
   const {
     register,
     handleSubmit,
@@ -28,13 +34,16 @@ const ContactPage = ({ location }) => {
 
   const onSubmit = async data => {
     setLoading(true)
-    const result = await postData(data)
+    const cap = await executeRecaptcha('contactus')
+    setToken(cap) //--> grab the generated token by the reCAPTCHA
+    // console.log("token", cap)
+    const result = await postData({...data, "token":cap});
     console.log("Reponse", result)
     setLoading(false)
   }
   const [loading, setLoading] = useState(false)
   return (
-    <Layout location={location} title={"Contact Me"}>
+    <Layout location={location} title={siteTitle}>
       <Seo title={"Contact Me"} description={"Something on your mind?"} />
       <article
         className="blog-post"
@@ -62,7 +71,6 @@ const ContactPage = ({ location }) => {
             />
             {/* errors will return when field validation fails  */}
             {errors.exampleRequired && <span>This field is required</span>}
-
             <input
               type="submit"
               value={loading === true ? "loading" : "Submit"}
@@ -79,3 +87,26 @@ const ContactPage = ({ location }) => {
 }
 
 export default ContactPage
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+        }
+      }
+    }
+  }
+`
