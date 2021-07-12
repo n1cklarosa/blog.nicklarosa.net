@@ -34,7 +34,7 @@ const BlogIndex = ({ data, location }) => {
       <div className={"w-full lg:w-1/2 mx-auto"}>
         <Bio />
       </div>
-      <div className={"w-full lg:w-3/4 mx-auto"}>
+      <div className={"w-full lg:w-1/2 mx-auto"}>
         <ol style={{ listStyle: `none` }}>
           {posts.map((post, i) => {
             const title = post.frontmatter.title || post.fields.slug
