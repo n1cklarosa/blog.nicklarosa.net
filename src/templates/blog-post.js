@@ -18,18 +18,26 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="blog-post w-full lg:w-3/4 mx-auto"
+        className="blog-post w-full"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline" className={"text-center mb-8 lg:mb-16"}>
+          <h1 itemProp="headline" className={"text-center mt-0 mb-8 lg:mb-12"}>
             {post.frontmatter.title}
           </h1>
-          <p className={'text-center mb-4 text-small text-md'}><strong>published: </strong>{post.frontmatter.date}</p>
-          {post.frontmatter.time && <p className={'text-center text-md'}><strong>read time: </strong>{post.frontmatter.time}</p>}
+          <p className={"text-center mb-4 text-small text-md"}>
+            <strong>published: </strong>
+            {post.frontmatter.date}
+          </p>
+          {post.frontmatter.time && (
+            <p className={"text-center text-md"}>
+              <strong>read time: </strong>
+              {post.frontmatter.time}
+            </p>
+          )}
         </header>
-        <div className={"text-center"}>
+        <div className={"text-center  w-full lg:w-1/2 mx-auto"}>
           <GatsbyImage
             className={"mx-auto"}
             style={{ marginBottom: "30px" }}
@@ -38,16 +46,15 @@ const BlogPostTemplate = ({ data, location }) => {
           />
         </div>
         <section
-          className={"article-content"}
+          className={"article-content  w-full lg:w-1/2 mx-auto"}
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-        />
-        <hr />
-        <footer>
+        /> 
+        <footer className={" w-full lg:w-1/2 mx-auto"}>
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav className="blog-post-nav  w-full lg:w-1/2 mx-auto">
         <ul
           style={{
             display: `flex`,
@@ -101,7 +108,11 @@ export const pageQuery = graphql`
         time
         featimg {
           childImageSharp {
-            gatsbyImageData(width: 600)
+            gatsbyImageData(
+              width: 800
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }
