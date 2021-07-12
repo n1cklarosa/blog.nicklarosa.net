@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import React, { useState } from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Recaptcha from "../components/recaptcha"
 import { useForm } from "react-hook-form"
 import Seo from "../components/seo"
 import Bio from "../components/bio"
@@ -11,9 +10,7 @@ const formApi = process.env.GATSBY_FORM_API
 
 const ContactPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-//   const posts = data.allMarkdownRemark.nodes
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const [token, setToken] = useState("")
   const {
     register,
     handleSubmit,
@@ -34,10 +31,8 @@ const ContactPage = ({ data, location }) => {
 
   const onSubmit = async data => {
     setLoading(true)
-    const cap = await executeRecaptcha('contactus')
-    setToken(cap) //--> grab the generated token by the reCAPTCHA
-    // console.log("token", cap)
-    const result = await postData({...data, "token":cap});
+    const cap = await executeRecaptcha("contactus")
+    const result = await postData({ ...data, token: cap })
     console.log("Reponse", result)
     setLoading(false)
   }
@@ -53,15 +48,23 @@ const ContactPage = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">Contact Me</h1>
         </header>
-
         <section>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}  className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             {/* register your input into the hook by invoking the "register" function */}
-            <input
-              {...register("name", { required: true })}
-              placeholder="name"
-              type="text"
-            />
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                for="username"
+              >
+                Name
+              </label>
+              <input
+                {...register("name", { required: true })}
+                placeholder="name"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username"
+              />
+            </div>
 
             {/* include validation with required or other standard HTML validation rules */}
             <input

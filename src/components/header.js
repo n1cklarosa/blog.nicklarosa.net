@@ -25,7 +25,7 @@ const Header = ({ location, title }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
+      <h1 className="main-heading mb-0">
         <Link to="/">{title}</Link>
       </h1>
     )
@@ -42,7 +42,7 @@ const Header = ({ location, title }) => {
 //   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="site-header">
+    <div className="site-header text-center  py-6 lg:py-12">
       <header className="global-header">{header}</header>
     </div>
   )

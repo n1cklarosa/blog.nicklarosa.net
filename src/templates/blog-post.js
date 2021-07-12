@@ -18,16 +18,27 @@ const BlogPostTemplate = ({ data, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article
-        className="blog-post"
+        className="blog-post w-full lg:w-3/4 mx-auto"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1 itemProp="headline" className={"text-center mb-8 lg:mb-16"}>
+            {post.frontmatter.title}
+          </h1>
+          <p className={'text-center mb-4 text-small text-md'}><strong>published: </strong>{post.frontmatter.date}</p>
+          {post.frontmatter.time && <p className={'text-center text-md'}><strong>read time: </strong>{post.frontmatter.time}</p>}
         </header>
-        <GatsbyImage image={image} alt={post.title} />
+        <div className={"text-center"}>
+          <GatsbyImage
+            className={"mx-auto"}
+            style={{ marginBottom: "30px" }}
+            image={image}
+            alt={post.title}
+          />
+        </div>
         <section
+          className={"article-content"}
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
@@ -87,10 +98,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        featimg { 
+        time
+        featimg {
           childImageSharp {
             gatsbyImageData(width: 600)
-          } 
+          }
         }
       }
     }

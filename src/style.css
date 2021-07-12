@@ -1,5 +1,11 @@
 /* CSS Custom Properties Definitions */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+/* CSS Custom Properties Definitions */
+
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -30,14 +36,14 @@
   --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
+  --fontFamily-serif:  Montserrat, system-ui,
     Times, serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
-  --fontWeight-bold: 700;
+  --fontWeight-bold: 600;
   --fontWeight-extrabold: 800;
   --fontWeight-black: 900;
   --fontSize-root: 16px;
@@ -251,7 +257,7 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: 0;
 }
 
 .main-heading {
@@ -303,12 +309,13 @@ a:focus {
 }
 
 .blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  /* @tailwind text-2xl; */
+   
 }
 
 .blog-post header p {
-  font-size: var(--fontSize-2);
-  font-family: var(--font-heading);
+  /* font-size: var(--fontSize-2);
+  font-family: var(--font-heading); */
 }
 
 .blog-post-nav ul {
@@ -330,4 +337,14 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+ 
+
+.article-content picture{
+  margin-bottom:30px;
+}
+
+.article-content img{
+  max-width:100%;
+  height:auto;
 }

@@ -5,9 +5,9 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   return ( 
-      <div className="global-wrapper" data-is-root-path={isRootPath}>
+      <div className="page-wrapper" data-is-root-path={isRootPath}>
         <Header location={location} title={title} />
-        <main>{children}</main>
+        <main  className="container mx-auto px-8 mb-8">{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
