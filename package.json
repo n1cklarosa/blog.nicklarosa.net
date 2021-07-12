@@ -36,6 +36,8 @@
     "react-google-recaptcha-v3": "^1.9.4",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.9.0",
+    "react-share": "^4.4.0",
+    "react-social-icons": "^5.5.1",
     "reaptcha": "^1.7.2",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"

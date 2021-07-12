@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Share from "../components/share"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,6 +12,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
   const image = getImage(post.frontmatter.featimg)
+  const twitter = data.site.siteMetadata.social.twitter
+  const url = data.site.siteMetadata.siteUrl
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -49,8 +53,18 @@ const BlogPostTemplate = ({ data, location }) => {
           className={"article-content  w-full lg:w-1/2 mx-auto"}
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-        /> 
+        />
         <footer className={" w-full lg:w-1/2 mx-auto"}>
+          <Share
+            socialConfig={{
+              twitter,
+              config: {
+                url: `${url}${post.fields.slug}`,
+                title: post.frontmatter.title,
+              },
+            }}
+            tags={post.frontmatter.subject}
+          />
           <Bio />
         </footer>
       </article>
@@ -95,16 +109,24 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        subject
         time
         featimg {
           childImageSharp {
